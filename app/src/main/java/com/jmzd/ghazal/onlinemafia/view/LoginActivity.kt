@@ -48,9 +48,17 @@ class LoginActivity : AppCompatActivity() {
             }
             viewmodel.mutable.observe(this , Observer {
                 if(it.status.equals("ok")){
-                    PlayerInfoData(viewmodel.tableName.toString() , viewmodel.tablePass.toString(), viewmodel.playerName.toString())
+                   // PlayerInfoData(viewmodel.tableName.toString() , viewmodel.tablePass.toString(), viewmodel.playerName.toString())
+//                       var playerInfo = PlayerInfoData()
+//                    playerInfo.name= viewmodel.tableName.toString()
+//                    playerInfo.pass= viewmodel.tablePass.toString()
+//                    playerInfo.user=viewmodel.playerName.toString()
                     val intent = Intent(this, PlayersActivity::class.java)
+                    intent.putExtra("tableName" , viewmodel.tableName.toString())
+                    intent.putExtra("tablePass" , viewmodel.tablePass.toString())
                     startActivity(intent)
+                }else{
+                    Log.d("test" , it.status.toString())
                 }
             })
         }
