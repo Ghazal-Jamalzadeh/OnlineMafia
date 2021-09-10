@@ -1,6 +1,7 @@
 package com.jmzd.ghazal.onlinemafia.repository
 
 import com.jmzd.ghazal.onlinemafia.dataModel.PlayerDataModel
+import com.jmzd.ghazal.onlinemafia.dataModel.PlayersCountDataModel
 import com.jmzd.ghazal.onlinemafia.dataModel.StatusDataModel
 import io.reactivex.Single
 import retrofit2.Retrofit
@@ -23,6 +24,14 @@ interface Api {
     @FormUrlEncoded
     @POST("getPlayers.php")
     fun getPlayersApi(@Field("tableName")tableName:String, @Field("tablePass")tablePass:String): Single<List<PlayerDataModel>>
+
+    @FormUrlEncoded
+    @POST("deletePlayer.php")
+    fun deletePlayerApi(@Field("tableName")tableName:String, @Field("tablePass")tablePass:String, @Field("playerName")playerName:String): Single<StatusDataModel>
+
+    @FormUrlEncoded
+    @POST("playersCount.php")
+    fun playersCountApi(@Field("tableName")tableName:String, @Field("tablePass")tablePass:String): Single<PlayersCountDataModel>
 
     companion object{
             operator fun invoke():Api{
