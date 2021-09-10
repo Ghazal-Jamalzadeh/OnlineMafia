@@ -21,6 +21,7 @@
               android:layout_height="wrap_content"
               android:textSize="@dimen/players_list_text_size"
               android:textStyle="bold"
+              android:padding="20dp"
               android:textColor="@color/colorPrimaryDark"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintTop_toTopOf="parent"

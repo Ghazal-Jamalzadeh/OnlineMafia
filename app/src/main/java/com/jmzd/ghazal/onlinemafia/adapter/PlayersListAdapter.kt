@@ -14,7 +14,7 @@ import com.jmzd.ghazal.onlinemafia.repository.Repository
 import io.reactivex.disposables.CompositeDisposable
 
 class PlayersListAdapter (val context: Context, val list: ArrayList<PlayerDataModel>
-, val change: GetChangeItems,val tableName:String , val tablePass:String)
+, val change: GetChangeItems,val tableName:String , val tablePass:String ,val isAdmin : Boolean)
     : RecyclerView.Adapter<PlayersListAdapter.viewholder>() {//, val user: String
     // اینجا ورودی لیست به جای list باید ArrayList تعریف شود تا بتوانیم remove را فراخوانی کنیم برای delete کردن ایتم ها
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewholder {
@@ -33,31 +33,8 @@ class PlayersListAdapter (val context: Context, val list: ArrayList<PlayerDataMo
         holder.items.data=data
         holder.items.playersNameTv.text=data.playerName
 
-//        holder.items.ImMines.setOnClickListener {
-//            val Com = CompositeDisposable() // میشد این قسمت ها را هم با mutableLiveData و ... پیاده سازی کرد.
-//            Repository.CustomResponse.request(Api.invoke().addCart(data.idproduct,"1",user,"m"),Com){
-//                Log.e("mosbar",it.status)
-//                if(it.status.equals("ok")){
-//                    // holder.items.TvPrice.text=it.price[0].price + " تومان "
-//                    holder.items.TvPrice.text=it.price_post + " تومان "
-//
-//                    change.getChange(0)
-//                }
-//            }
-//        }
-
-//        holder.items.ImMosbat.setOnClickListener {
-//            val Com = CompositeDisposable()
-//            Repository.CustomResponse.request(Api.invoke().addCart(data.idproduct,"1",user,"add"),Com){
-//                if(it.status.equals("ok")){
-//                    Log.e("mosbar",it.status)
-//                    //holder.items.TvPrice.text=it.price[0].price + " تومان "
-//                    holder.items.TvPrice.text=it.price_post + " تومان "
-//                    change.getChange(0)
-//                }
-//            }
-//        }
-
+//        if (!isAdmin) //TODO: از کامنت خارج کن این قسمتو بعدا
+//            holder.items.recycleBin.visibility=View.GONE
 
         holder.items.recycleBin.setOnClickListener {
             val Com = CompositeDisposable()

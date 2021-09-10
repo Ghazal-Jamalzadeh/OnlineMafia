@@ -1,5 +1,6 @@
 package com.jmzd.ghazal.onlinemafia.repository
 
+import com.jmzd.ghazal.onlinemafia.dataModel.GetAdminDataModel
 import com.jmzd.ghazal.onlinemafia.dataModel.PlayerDataModel
 import com.jmzd.ghazal.onlinemafia.dataModel.PlayersCountDataModel
 import com.jmzd.ghazal.onlinemafia.dataModel.StatusDataModel
@@ -31,7 +32,11 @@ interface Api {
 
     @FormUrlEncoded
     @POST("playersCount.php")
-    fun playersCountApi(@Field("tableName")tableName:String, @Field("tablePass")tablePass:String): Single<PlayersCountDataModel>
+    fun getPlayersCountApi(@Field("tableName")tableName:String, @Field("tablePass")tablePass:String): Single<PlayersCountDataModel>
+
+    @FormUrlEncoded
+    @POST("getAdmin.php")
+    fun getAdmin(@Field("tableName")tableName:String, @Field("tablePass")tablePass:String): Single<GetAdminDataModel>
 
     companion object{
             operator fun invoke():Api{

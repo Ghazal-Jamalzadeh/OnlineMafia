@@ -17,6 +17,7 @@ import com.jmzd.ghazal.onlinemafia.viewModel.CreateJoinViewModel
 class LoginActivity : AppCompatActivity() {
     lateinit var bind : ActivityLoginBinding
     private val TAG = "LoginActivity"
+     var isAdmin : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +34,7 @@ class LoginActivity : AppCompatActivity() {
 
         if (intent.getStringExtra("mode")=="create"){
             bind.formButton.setText(R.string.create_table_button_text)
+            isAdmin = true
         }else if (intent.getStringExtra("mode")=="join"){
             bind.formButton.setText(R.string.join_table_button_text)
         }
@@ -48,14 +50,10 @@ class LoginActivity : AppCompatActivity() {
             }
             viewmodel.mutable.observe(this , Observer {
                 if(it.status.equals("ok")){
-                   // PlayerInfoData(viewmodel.tableName.toString() , viewmodel.tablePass.toString(), viewmodel.playerName.toString())
-//                       var playerInfo = PlayerInfoData()
-//                    playerInfo.name= viewmodel.tableName.toString()
-//                    playerInfo.pass= viewmodel.tablePass.toString()
-//                    playerInfo.user=viewmodel.playerName.toString()
                     val intent = Intent(this, PlayersActivity::class.java)
                     intent.putExtra("tableName" , viewmodel.tableName.toString())
                     intent.putExtra("tablePass" , viewmodel.tablePass.toString())
+                    intent.putExtra("isAdmin" , isAdmin)
                     startActivity(intent)
                 }else{
                     Log.d("test" , it.status.toString())
