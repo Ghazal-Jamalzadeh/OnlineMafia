@@ -38,6 +38,12 @@ interface Api {
     @POST("getAdmin.php")
     fun getAdmin(@Field("tableName")tableName:String, @Field("tablePass")tablePass:String): Single<GetAdminDataModel>
 
+    @FormUrlEncoded
+    @POST("deleteTable.php")
+    fun deleteTableApi(@Field("tableName")tableName:String, @Field("tablePass")tablePass:String): Single<StatusDataModel>
+
+
+
     companion object{
             operator fun invoke():Api{
                 return Retrofit.Builder()

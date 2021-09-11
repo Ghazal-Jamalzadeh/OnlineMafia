@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.jmzd.ghazal.onlinemafia.dataModel.GetAdminDataModel
 import com.jmzd.ghazal.onlinemafia.dataModel.PlayerDataModel
 import com.jmzd.ghazal.onlinemafia.dataModel.PlayersCountDataModel
+import com.jmzd.ghazal.onlinemafia.dataModel.StatusDataModel
 import com.jmzd.ghazal.onlinemafia.repository.Api
 import com.jmzd.ghazal.onlinemafia.repository.Repository
 import io.reactivex.disposables.CompositeDisposable
@@ -14,6 +15,8 @@ class PlayersViewModel : ViewModel() {
     val mutable = MutableLiveData<List<PlayerDataModel>>()
     val countMutabele = MutableLiveData<PlayersCountDataModel>()
     val adminMutable = MutableLiveData<GetAdminDataModel>()
+    val deleteTableMutable = MutableLiveData<StatusDataModel>()
+    val deletePlayerMutable = MutableLiveData<StatusDataModel>()
 
     val com = CompositeDisposable()
     fun getPlayers(tableName:String , tablePass:String){ // ااگر از طریق دیتا بایندینگ کال کنیم متد را به عنوان وروردی یک ویو می گیرد
@@ -31,6 +34,18 @@ class PlayersViewModel : ViewModel() {
     fun getAdmin(tableName:String , tablePass:String){ // ااگر از طریق دیتا بایندینگ کال کنیم متد را به عنوان وروردی یک ویو می گیرد
         Repository.CustomResponse.request(Api.invoke().getAdmin(tableName,tablePass),com){
             adminMutable.value=it
+        }
+    }
+
+    fun deleteTable(tableName:String , tablePass:String){ // ااگر از طریق دیتا بایندینگ کال کنیم متد را به عنوان وروردی یک ویو می گیرد
+        Repository.CustomResponse.request(Api.invoke().deleteTableApi(tableName,tablePass),com){
+            deleteTableMutable.value=it
+        }
+    }
+
+    fun deletePlayer(tableName:String , tablePass:String ,playerName:String){ // ااگر از طریق دیتا بایندینگ کال کنیم متد را به عنوان وروردی یک ویو می گیرد
+        Repository.CustomResponse.request(Api.invoke().deletePlayerApi(tableName,tablePass,playerName),com){
+            deletePlayerMutable.value=it
         }
     }
 

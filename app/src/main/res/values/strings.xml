@@ -7,6 +7,9 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="menu_home">مافیای آنلاین</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -25,9 +28,13 @@
     <string name="table_name_title">نام میز:</string>
     <string name="admin_title">ادمین:</string>
     <string name="players_count_title">تعداد بازیکنان:</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="cd_exit_icon">exit</string>
+    <string name="cd_refresh_icon">refresh</string>
+    
+    <string name="dialog_title">آیا مطمئنید که می‌خواهید خارج شوید؟</string>
+    <string name="admin_dialog_message">شما ادمین این میز هستید. در صورت خرج ادمین میز پاک خواهد شد.</string>
+    <string name="player_dialog_message">در صورت خروج نام شما از لیست بازیکنان حذف خواهد شد.</string>
 
 
 </resources>

@@ -53,8 +53,10 @@ class LoginActivity : AppCompatActivity() {
                     val intent = Intent(this, PlayersActivity::class.java)
                     intent.putExtra("tableName" , viewmodel.tableName.toString())
                     intent.putExtra("tablePass" , viewmodel.tablePass.toString())
+                    intent.putExtra("playerName" , viewmodel.playerName.toString())
                     intent.putExtra("isAdmin" , isAdmin)
                     startActivity(intent)
+                    finish()
                 }else{
                     Log.d("test" , it.status.toString())
                 }
