@@ -13,7 +13,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/test2"
     android:layoutDirection="rtl"
-    tools:context=".view.LoginActivity">
+    tools:context=".view.CreateTableActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

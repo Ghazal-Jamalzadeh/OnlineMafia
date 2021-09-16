@@ -1,5 +1,7 @@
 package com.jmzd.ghazal.onlinemafia.repository
 
+import android.content.Context
+import com.jmzd.ghazal.onlinemafia.R
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -27,4 +29,20 @@ class Repository {
             )
         }
     }
+
+    object SharedPreferences{
+        fun setSharedPreferences(context: Context , key: String , value:String){
+            val sharedPreferences = context.getSharedPreferences(R.string.preference_file_key.toString(),Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.putString(key,value)
+            editor.apply()
+        }
+
+        fun getSharedPreferences(context:Context , key: String):String{
+            val sharedPreferences = context.getSharedPreferences(R.string.preference_file_key.toString(),Context.MODE_PRIVATE)
+            val userid=sharedPreferences.getString(key,null)
+            return userid.toString()
+        }
+    }
+
 }

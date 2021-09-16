@@ -9,34 +9,34 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.jmzd.ghazal.onlinemafia.R
-import com.jmzd.ghazal.onlinemafia.dataModel.PlayerInfoData
-import com.jmzd.ghazal.onlinemafia.databinding.ActivityLoginBinding
+import com.jmzd.ghazal.onlinemafia.databinding.ActivityCreateTableBinding
 import com.jmzd.ghazal.onlinemafia.repository.App
 import com.jmzd.ghazal.onlinemafia.repository.Factory
+import com.jmzd.ghazal.onlinemafia.repository.Repository
 import com.jmzd.ghazal.onlinemafia.viewModel.CreateJoinViewModel
 
-class LoginActivity : AppCompatActivity() {
-    lateinit var bind : ActivityLoginBinding
+class CreateTableActivity : AppCompatActivity() {
+    lateinit var bind : ActivityCreateTableBinding
     private val TAG = "LoginActivity"
      var isAdmin : Boolean = false
+    var token :String? =null
+    var username: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_create_table)
 
 //        binding = ActivityLoginBinding.inflate(layoutInflater)
 //        setContentView(binding.root)
-        bind = DataBindingUtil.setContentView(this, R.layout.activity_login)
+        bind = DataBindingUtil.setContentView(this, R.layout.activity_create_table)
 
         val viewmodel = ViewModelProvider(this, Factory(App())).get(CreateJoinViewModel::class.java)
         bind.viewmodel=viewmodel
 
-        Log.d("test123" , "getList() method called")
-        viewmodel.getList()
-        viewmodel.mutableTest.observe(this , Observer {
-            Log.d("test123" , it.toString())
-            Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
-        })
+        token = Repository.SharedPreferences.getSharedPreferences(this , R.string.preference_token_key.toString())
+        username = Repository.SharedPreferences.getSharedPreferences(this , R.string.preference_username_key.toString())
+
+        Log.d(TAG , "token = $token , username = $username")
 
         var intent = intent
 

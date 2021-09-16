@@ -10,6 +10,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="preference_file_key">userInfo</string>
+    <string name="preference_token_key">token</string>
+    <string name="preference_username_key">username</string>
+
     <string name="menu_home">مافیای آنلاین</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -28,13 +32,19 @@
     <string name="table_name_title">نام میز:</string>
     <string name="admin_title">ادمین:</string>
     <string name="players_count_title">تعداد بازیکنان:</string>
-    
+
     <string name="cd_exit_icon">exit</string>
     <string name="cd_refresh_icon">refresh</string>
-    
+
     <string name="dialog_title">آیا مطمئنید که می‌خواهید خارج شوید؟</string>
     <string name="admin_dialog_message">شما ادمین این میز هستید. در صورت خرج ادمین میز پاک خواهد شد.</string>
     <string name="player_dialog_message">در صورت خروج نام شما از لیست بازیکنان حذف خواهد شد.</string>
+
+    <string name="username_reg">نام کاربری خود را وارد کنید.</string>
+    <string name="password_reg">پسورد خود را وارد کنید.</string>
+    <string name="repeat_password_reg">تکرار پسورد</string>
+    <string name="register_button">ثبت نام</string>
+    <string name="login_button_reg">قبلا ثبت نام کرده‌ام</string>
 
 
 </resources>

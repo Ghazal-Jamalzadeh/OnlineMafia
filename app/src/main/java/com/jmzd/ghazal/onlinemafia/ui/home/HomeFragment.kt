@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.jmzd.ghazal.onlinemafia.databinding.FragmentHomeBinding
-import com.jmzd.ghazal.onlinemafia.view.LoginActivity
+import com.jmzd.ghazal.onlinemafia.view.CreateTableActivity
 
 
 class HomeFragment : Fragment() {
@@ -47,13 +47,13 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.createTableCard.setOnClickListener(){
-            val intent = Intent(activity, LoginActivity::class.java)
+            val intent = Intent(activity, CreateTableActivity::class.java)
             intent.putExtra("mode" , "create")
             startActivity(intent)
         }
 
         binding.joinTableCard.setOnClickListener(){
-            val intent = Intent(activity, LoginActivity::class.java)
+            val intent = Intent(activity, CreateTableActivity::class.java)
             intent.putExtra("mode" , "join")
             startActivity(intent)
         }

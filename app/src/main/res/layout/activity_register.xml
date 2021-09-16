@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.jmzd.ghazal.onlinemafia.viewModel.RegisterViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:layoutDirection="rtl"
+        tools:context=".view.CreateTableActivity">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/registerCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:padding="20dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/usernameEd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/textview_outline"
+                    android:hint="@string/username_reg"
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/form_text_size"
+                    android:text="@={viewmodel.username}"/>
+
+
+
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/textview_outline"
+                    android:hint="@string/password_reg"
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/form_text_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText2"
+                    tools:layout_editor_absoluteX="53dp"
+                    android:inputType="textPassword"
+                    android:text="@={viewmodel.password}"/>
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/textview_outline"
+                    android:hint="@string/repeat_password_reg"
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/form_text_size"
+                    app:layout_constraintBottom_toTopOf="@+id/editText"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="42dp"
+                    android:inputType="textPassword"
+                    android:text="@={viewmodel.repeat}"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/registerButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:text="@string/register_button"
+                    android:textSize="@dimen/form_text_size"
+                    android:textStyle="bold"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/white"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/loginButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:text="@string/login_button_reg"
+                    android:textSize="@dimen/form_text_size"
+                    android:textStyle="bold"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/white"
+                    />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

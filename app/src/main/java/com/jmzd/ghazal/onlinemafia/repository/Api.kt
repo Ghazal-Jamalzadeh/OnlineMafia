@@ -16,6 +16,11 @@ interface Api {
     fun getListApi(): Single<KelidestanDataModel> // چون آرایه است چیزی که برمیگردئ لیست می خواهیم. اگر فقط یک object{}  بود لازم نبود لیست باشد و فقط یک<DataModel_PostItem> کافی بود.
 
     @FormUrlEncoded
+    @POST("register.php")
+    fun registerApi(@Field("username")tableName:String, @Field("password")tablePass:String): Single<RegisterDataModel>
+
+
+    @FormUrlEncoded
     @POST("createTable.php")
     fun createTableApi(@Field("tableName")tableName:String, @Field("tablePass")tablePass:String, @Field("playerName")playerName:String): Single<StatusDataModel>
 
@@ -48,7 +53,7 @@ interface Api {
     companion object{
             operator fun invoke():Api{
                 return Retrofit.Builder()
-                    .baseUrl("https://www.kelidestan.com/fixed-url/")//http://192.168.1.104/Mafia/
+                    .baseUrl("http://192.168.1.104/Mafia-JWT/")//http://192.168.1.104/Mafia/    //https://www.kelidestan.com/fixed-url/
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
