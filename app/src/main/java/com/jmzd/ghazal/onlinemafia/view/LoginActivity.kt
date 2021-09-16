@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -29,6 +30,13 @@ class LoginActivity : AppCompatActivity() {
 
         val viewmodel = ViewModelProvider(this, Factory(App())).get(CreateJoinViewModel::class.java)
         bind.viewmodel=viewmodel
+
+        Log.d("test123" , "getList() method called")
+        viewmodel.getList()
+        viewmodel.mutableTest.observe(this , Observer {
+            Log.d("test123" , it.toString())
+            Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
+        })
 
         var intent = intent
 
