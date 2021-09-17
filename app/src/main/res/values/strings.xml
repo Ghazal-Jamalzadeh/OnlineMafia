@@ -14,6 +14,26 @@
     <string name="preference_token_key">token</string>
     <string name="preference_username_key">username</string>
 
+    <string name="username_reg">نام کاربری</string>
+    <string name="email_reg">ایمیل</string>
+    <string name="password_reg">کلمه عبور</string>
+    <string name="repeat_password_reg">تکرار کلمه عبور</string>
+    <string name="username_or_email">نام کاربری یا ایمیل</string>
+    <string name="register_button">ثبت نام</string>
+    <string name="login_button_reg">قبلا ثبت نام کرده‌ام</string>
+    <string name="login_button">ورود</string>
+    <string name="register_button_login">ثبت نام نکرده اید؟</string>
+
+    <string name="empty_field_error">لطفا تمام فیلدها را پر کنید.</string>
+    <string name="email_format_error">فرمت ایمیل صحیح نیست.</string>
+    <string name="password_does_not_match_error">تکرار پسورد مطابق نیست.</string>
+    <string name="register_unsuccessful">ثبت‌نام ناموفق. دوباره تلاش کنید.</string>
+    <string name="register_successful">ثبت‌نام با موفقیت انجام شد.</string>
+    <string name="login_successful">ورود موفق</string>
+    <string name="duplicate_email">کاربری با این ایمیل قبلا ثیت‌نام کرده است.</string>
+    <string name="duplicate_username">نان کاربری شما تکراری است. لطفا کمی آن را تغییر دهید.</string>
+    <string name="wrong_username_or_password">نام کاربری یا پسورد شما اشتباه است.</string>
+
     <string name="menu_home">مافیای آنلاین</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -39,12 +59,6 @@
     <string name="dialog_title">آیا مطمئنید که می‌خواهید خارج شوید؟</string>
     <string name="admin_dialog_message">شما ادمین این میز هستید. در صورت خرج ادمین میز پاک خواهد شد.</string>
     <string name="player_dialog_message">در صورت خروج نام شما از لیست بازیکنان حذف خواهد شد.</string>
-
-    <string name="username_reg">نام کاربری خود را وارد کنید.</string>
-    <string name="password_reg">پسورد خود را وارد کنید.</string>
-    <string name="repeat_password_reg">تکرار پسورد</string>
-    <string name="register_button">ثبت نام</string>
-    <string name="login_button_reg">قبلا ثبت نام کرده‌ام</string>
 
 
 </resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/register_navigations"
+    app:startDestination="@id/registerFragment">
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.jmzd.ghazal.onlinemafia.view.fragments.RegisterFragment"
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFargment"
+            app:destination="@id/loginFargment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFargment"
+        android:name="com.jmzd.ghazal.onlinemafia.view.fragments.LoginFargment"
+        android:label="LoginFargment" >
+        <action
+            android:id="@+id/action_loginFargment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+</navigation>

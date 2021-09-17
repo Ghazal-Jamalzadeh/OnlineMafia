@@ -17,8 +17,11 @@ interface Api {
 
     @FormUrlEncoded
     @POST("register.php")
-    fun registerApi(@Field("username")tableName:String, @Field("password")tablePass:String): Single<RegisterDataModel>
+    fun registerApi(@Field("username")username:String,  @Field("email")email:String, @Field("password")tablePass:String): Single<RegisterDataModel>
 
+    @FormUrlEncoded
+    @POST("login.php")
+    fun loginApi(@Field("username")tableName:String, @Field("password")tablePass:String): Single<RegisterDataModel>
 
     @FormUrlEncoded
     @POST("createTable.php")
