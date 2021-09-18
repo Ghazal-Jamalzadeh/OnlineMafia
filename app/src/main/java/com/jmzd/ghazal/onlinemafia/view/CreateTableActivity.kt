@@ -33,8 +33,8 @@ class CreateTableActivity : AppCompatActivity() {
         val viewmodel = ViewModelProvider(this, Factory(App())).get(CreateJoinViewModel::class.java)
         bind.viewmodel=viewmodel
 
-        token = Repository.SharedPreferences.getSharedPreferences(this , R.string.preference_token_key.toString())
-        username = Repository.SharedPreferences.getSharedPreferences(this , R.string.preference_username_key.toString())
+        token = Repository.SharedPreferences.getSharedPreferences(this , getString(R.string.preference_token_key))
+        username = Repository.SharedPreferences.getSharedPreferences(this , getString(R.string.preference_username_key))
 
         Log.d(TAG , "token = $token , username = $username")
 

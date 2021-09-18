@@ -25,7 +25,6 @@ import com.jmzd.ghazal.onlinemafia.viewModel.RegisterViewModel
 
 
 class RegisterFragment : Fragment() {
-    private  val TAG = "RegisterFragment"
 
     override fun onCreateView(
 
@@ -40,8 +39,11 @@ class RegisterFragment : Fragment() {
         bind.viewmodel=viewmodel
 
         bind.registerButton.setOnClickListener(){
+            requireActivity().run {
+                viewmodel.register(bind.root,this)
+            }
 
-                viewmodel.register(bind.root)
+
         }
 
         bind.loginButton.setOnClickListener(){
@@ -53,7 +55,7 @@ class RegisterFragment : Fragment() {
         viewmodel.mutable.observe(viewLifecycleOwner,  {
             Log.d("regTest" , it.toString())
             if(it.status=="ok"){
-                SnackBarMaker.SnackBar.setSnackBar(bind.root , R.string.register_successful.toString())
+                SnackBarMaker.SnackBar.setSnackBar(bind.root ,getString(R.string.register_successful))
 
                 requireActivity().run{
                     Repository.SharedPreferences.setSharedPreferences(this , R.string.preference_token_key.toString(), it.token)
@@ -64,11 +66,11 @@ class RegisterFragment : Fragment() {
                 }
 
             }else if (it.status=="error"){
-                SnackBarMaker.SnackBar.setSnackBar(bind.root , R.string.register_unsuccessful.toString())
+                SnackBarMaker.SnackBar.setSnackBar(bind.root , getString(R.string.register_unsuccessful))
             }else if (it.status=="duplicate username"){
-                SnackBarMaker.SnackBar.setSnackBar(bind.root , R.string.duplicate_username.toString())
+                SnackBarMaker.SnackBar.setSnackBar(bind.root , getString(R.string.duplicate_username))
             } else if (it.status=="duplicate email"){
-                SnackBarMaker.SnackBar.setSnackBar(bind.root , R.string.duplicate_email.toString())
+                SnackBarMaker.SnackBar.setSnackBar(bind.root , getString(R.string.duplicate_email))
             }
         })
         return bind.root
