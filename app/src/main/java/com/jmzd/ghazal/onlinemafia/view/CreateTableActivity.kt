@@ -51,17 +51,17 @@ class CreateTableActivity : AppCompatActivity() {
             Log.d(TAG , "button clicked...")
             if (intent.getStringExtra("mode")=="create"){
                 Log.d(TAG , "create mode")
-                viewmodel.createTable()
+                viewmodel.createTable(token.toString())
             }else if (intent.getStringExtra("mode")=="join"){
                 Log.d(TAG , "join mode")
                 viewmodel.joinTable()
             }
             viewmodel.mutable.observe(this , Observer {
-                if(it.status.equals("ok")){
+                if(it.status=="ok"){
                     val intent = Intent(this, PlayersActivity::class.java)
                     intent.putExtra("tableName" , viewmodel.tableName.toString())
                     intent.putExtra("tablePass" , viewmodel.tablePass.toString())
-                    intent.putExtra("playerName" , viewmodel.playerName.toString())
+                    //intent.putExtra("playerName" , viewmodel.playerName.toString())
                     intent.putExtra("isAdmin" , isAdmin)
                     startActivity(intent)
                     finish()

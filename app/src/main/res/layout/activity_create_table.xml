@@ -60,20 +60,20 @@
         tools:layout_editor_absoluteX="53dp"
         android:text="@={viewmodel.tablePass}"/>
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="@drawable/textview_outline"
-        android:hint="@string/your_name_hint"
-        android:padding="10dp"
-        android:textAlignment="center"
-        android:textSize="@dimen/form_text_size"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="42dp"
-        android:text="@={viewmodel.playerName}"/>
+<!--    <EditText-->
+<!--        android:id="@+id/editText2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="20dp"-->
+<!--        android:background="@drawable/textview_outline"-->
+<!--        android:hint="@string/your_name_hint"-->
+<!--        android:padding="10dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="@dimen/form_text_size"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/editText"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:layout_editor_absoluteX="42dp"-->
+<!--        android:text="@={viewmodel.playerName}"/>-->
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/formButton"

@@ -58,8 +58,8 @@ class RegisterFragment : Fragment() {
                 SnackBarMaker.SnackBar.setSnackBar(bind.root ,getString(R.string.register_successful))
 
                 requireActivity().run{
-                    Repository.SharedPreferences.setSharedPreferences(this , R.string.preference_token_key.toString(), it.token)
-                    Repository.SharedPreferences.setSharedPreferences(this , R.string.preference_username_key.toString(), it.username)
+                    Repository.SharedPreferences.setSharedPreferences(this , getString(R.string.preference_token_key), it.token)
+                    Repository.SharedPreferences.setSharedPreferences(this , getString(R.string.preference_username_key), it.username)
 
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
